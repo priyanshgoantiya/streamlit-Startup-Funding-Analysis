@@ -71,6 +71,7 @@ def load_Overall_analysis():
     ax.set_xticklabels(temp_df['x_axis'][::step], rotation=90, fontsize=12)
     plt.yticks(fontsize=12)
     st.pyplot(fig)
+    plt.close()
 
     # Sector Graph
     st.subheader("Sector Wise Investment")
@@ -101,6 +102,7 @@ def load_Overall_analysis():
         ax1.annotate(f'{percentage:.1f}%',
                      xy=(bar.get_x() + bar.get_width() / 2, height))
     st.pyplot(fig1)
+    plt.close()
     # Type Of Funding
 
     st.subheader("Type Of Funding")
@@ -133,6 +135,7 @@ def load_Overall_analysis():
         ax2.annotate(f'{percentage:.1f}%',
                      xy=(bar.get_x() + bar.get_width() / 2, height))
     st.pyplot(fig2)
+    plt.close()
 
     # Top Startup Year Wise
     st.subheader("Top Startups")
@@ -171,6 +174,7 @@ def load_Overall_analysis():
     # Display plot in Streamlit
     st.subheader("Funding Heatmap")
     st.pyplot(plt)
+    plt.close()
 
 
 def load_investor_details(investor):
@@ -197,6 +201,7 @@ def load_investor_details(investor):
         plt.xticks(rotation=90, fontsize=12)
         plt.yticks(fontsize=12)
         st.pyplot(fig)
+        plt.close()
 
     # Sector Invested In
     with col2:
@@ -206,6 +211,7 @@ def load_investor_details(investor):
         ax1.pie(investment_by_vertical, labels=investment_by_vertical.index, autopct='%1.1f%%', pctdistance=0.75)
         ax1.set_title(f'Investments by {investor} by Vertical')
         st.pyplot(fig1)
+        plt.close()
 
     # Round Invested in
     with col3:
@@ -215,6 +221,7 @@ def load_investor_details(investor):
         ax2.pie(investment_by_round, labels=investment_by_round.index, autopct='%1.1f%%', pctdistance=0.85)
         ax2.set_title(f'Investments by {investor} by Round')
         st.pyplot(fig2)
+        plt.close()
 
     # City With Most Investment
     with col4:
@@ -224,6 +231,7 @@ def load_investor_details(investor):
         ax3.pie(investment_by_city, labels=investment_by_city.index, autopct='%1.1f%%', pctdistance=0.85)
         ax3.set_title(f'Investments by {investor} by City')
         st.pyplot(fig3)
+        plt.close()
 
     # Yearly investment analysis
 
@@ -232,6 +240,7 @@ def load_investor_details(investor):
     st.subheader(f"Yearly Investment Trend for {investor}")
     ax4.plot(yearly_investment.index, yearly_investment.values, marker='o')
     st.pyplot(fig4)
+    plt.close()
 
     # Similar investors
 def find_similar_investors(selected_investor):
