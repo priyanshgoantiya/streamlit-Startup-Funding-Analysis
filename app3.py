@@ -7,7 +7,6 @@ from sklearn.compose import ColumnTransformer
 from sklearn.cluster import KMeans
 import seaborn as sns
 import numpy as np
-
 st.set_page_config(layout='wide', page_title="Startup Analysis")
 
 # Load data
